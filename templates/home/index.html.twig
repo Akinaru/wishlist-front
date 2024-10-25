@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wishlists</title>
+</head>
+<body>
+    <h1>Wishlists</h1>
+
+    {% if wishlists is not empty %}
+        {% for wishlist in wishlists %}
+            <h2>{{ wishlist.wl_name }}</h2> {# Titre de la wishlist #}
+            <ul>
+                <li>URL: <a href="{{ wishlist.wl_url }}">{{ wishlist.wl_url }}</a></li>
+                <li>Image: <img src="{{ wishlist.wl_image }}" alt="{{ wishlist.wl_name }}" /></li>
+                <li>Prix: {{ wishlist.wl_price }}</li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p>Aucune wishlist trouvée.</p>
+    {% endif %}
+</body>
+</html>
