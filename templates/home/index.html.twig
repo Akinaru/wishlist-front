@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Wishlists</title>
-</head>
-<body>
-    <h1>Wishlists</h1>
+{% extends 'base.html.twig' %}
 
-    {% if wishlists is not empty %}
-        {% for wishlist in wishlists %}
-            <h2>{{ wishlist.wl_name }}</h2> {# Titre de la wishlist #}
-            <ul>
-                <li>URL: <a href="{{ wishlist.wl_url }}">{{ wishlist.wl_url }}</a></li>
-                <li>Image: <img src="{{ wishlist.wl_image }}" alt="{{ wishlist.wl_name }}" /></li>
-                <li>Prix: {{ wishlist.wl_price }}</li>
-            </ul>
-        {% endfor %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    {% for wishlist in wishlists %}
+        <div class="wishlist-card">
+            <img src="{{ wishlist.wl_image }}" alt="{{ wishlist.wl_name }}">
+            <h3>{{ wishlist.wl_name }}</h3>
+            <p>{{ wishlist.wl_description ? wishlist.wl_description : 'Aucune description' }}</p>
+            <p class="price">{{ wishlist.wl_price }} €</p>
+            <a href="{{ wishlist.wl_url }}" target="_blank">Voir plus</a>
+        </div>
     {% else %}
         <p>Aucune wishlist trouvée.</p>
-    {% endif %}
-</body>
-</html>
+    {% endfor %}
+</div>
+{% endblock %}

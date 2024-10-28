@@ -1,0 +1,66 @@
+/* Conteneur principal */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Carte wishlist */
+.wishlist-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.wishlist-card:hover {
+    transform: scale(1.05);
+}
+
+.wishlist-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.wishlist-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.wishlist-card p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.wishlist-card .price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+/* Style des boutons ou liens */
+.wishlist-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.wishlist-card a:hover {
+    background-color: #2980b9;
+}
